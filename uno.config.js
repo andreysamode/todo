@@ -1,8 +1,20 @@
-import { defineConfig, presetIcons } from 'unocss'
+import { defineConfig, presetUno, presetIcons, presetAttributify, presetWebFonts } from 'unocss'
 
 export default defineConfig({
-  // TODO: this blows up unocss definitions
-  // presets: [
-  //   presetIcons(),
-  // ],
-})
+  presets: [
+    presetUno(),
+    presetIcons(),
+    presetAttributify(),
+    presetWebFonts({
+      provider: 'google',
+      fonts: {
+        sans: 'Montserrat',
+      },
+    }),
+  ],
+  theme: {
+    fontFamily: {
+      sans: ["Montserrat"]
+    }
+  }
+});
