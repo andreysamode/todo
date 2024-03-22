@@ -1,4 +1,4 @@
-import { defineConfig, presetUno, presetIcons, presetAttributify, presetWebFonts } from 'unocss'
+import { defineConfig, presetUno, presetIcons, presetAttributify, presetWebFonts, transformerVariantGroup } from 'unocss'
 
 export default defineConfig({
   presets: [
@@ -12,9 +12,15 @@ export default defineConfig({
       },
     }),
   ],
+  transformers: [
+    transformerVariantGroup(),
+  ],
   theme: {
     fontFamily: {
       sans: ["Montserrat"]
+    },
+    colors: {
+      'peach': '#fcc0aa'
     }
   }
 });
